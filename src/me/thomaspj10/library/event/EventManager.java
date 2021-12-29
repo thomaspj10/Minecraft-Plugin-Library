@@ -1,4 +1,4 @@
-package me.thomaspj10.library.events;
+package me.thomaspj10.library.event;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;

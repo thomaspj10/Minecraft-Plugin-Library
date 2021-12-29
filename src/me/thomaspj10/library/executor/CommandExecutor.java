@@ -7,7 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.events.IEventListener;
+import me.thomaspj10.library.event.IEventListener;
 import me.thomaspj10.library.executor.builder.InstructionChainBuilder;
 import me.thomaspj10.library.executor.instruction.InstructionChain;
 import me.thomaspj10.library.executor.variable.VariableManager;

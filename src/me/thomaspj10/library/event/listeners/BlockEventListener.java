@@ -1,4 +1,4 @@
-package me.thomaspj10.library.events.listeners;
+package me.thomaspj10.library.event.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,7 +35,7 @@ import org.bukkit.event.block.NotePlayEvent;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.block.SpongeAbsorbEvent;
 
-import me.thomaspj10.library.events.EventManager;
+import me.thomaspj10.library.event.EventManager;
 
 public class BlockEventListener implements Listener {
 

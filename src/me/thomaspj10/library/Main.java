@@ -5,11 +5,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import me.thomaspj10.library.events.EventManager;
-import me.thomaspj10.library.events.listeners.BlockEventListener;
-import me.thomaspj10.library.events.listeners.EntityEventListener;
-import me.thomaspj10.library.events.listeners.InventoryEventListener;
-import me.thomaspj10.library.events.listeners.PlayerEventListener;
+import me.thomaspj10.library.event.EventManager;
+import me.thomaspj10.library.event.listeners.BlockEventListener;
+import me.thomaspj10.library.event.listeners.EntityEventListener;
+import me.thomaspj10.library.event.listeners.InventoryEventListener;
+import me.thomaspj10.library.event.listeners.PlayerEventListener;
 
 public class Main extends JavaPlugin {
 

@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.thomaspj10.library.command.ACommand;
 import me.thomaspj10.library.command.ACommandExecuteEvent;
 import me.thomaspj10.library.data.Context;
-import me.thomaspj10.library.events.IEventListener;
+import me.thomaspj10.library.event.IEventListener;
 
 public class PluginLibrary implements IEventListener<Event> {
 	

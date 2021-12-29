@@ -10,8 +10,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.thomaspj10.library.Main;
-import me.thomaspj10.library.events.IEventListener;
-import me.thomaspj10.library.inventory.events.AInventoryClickEvent;
+import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 
 public class AItem implements IEventListener<AInventoryClickEvent> {
 	

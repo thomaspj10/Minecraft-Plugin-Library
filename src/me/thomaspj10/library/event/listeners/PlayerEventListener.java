@@ -1,4 +1,4 @@
-package me.thomaspj10.library.events.listeners;
+package me.thomaspj10.library.event.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -57,7 +57,7 @@ import org.bukkit.event.player.PlayerUnleashEntityEvent;
 import org.bukkit.event.player.PlayerUnregisterChannelEvent;
 import org.bukkit.event.player.PlayerVelocityEvent;
 
-import me.thomaspj10.library.events.EventManager;
+import me.thomaspj10.library.event.EventManager;
 
 public class PlayerEventListener implements Listener {
 

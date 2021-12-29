@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerEvent;
 
 import me.thomaspj10.library.Main;
-import me.thomaspj10.library.events.IEventListener;
+import me.thomaspj10.library.event.IEventListener;
 
 public class APlayer implements IEventListener<PlayerEvent> {
 	

@@ -1,14 +1,14 @@
-package me.thomaspj10.library.events.listeners;
+package me.thomaspj10.library.event.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-import me.thomaspj10.library.events.EventManager;
+import me.thomaspj10.library.event.EventManager;
+import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 import me.thomaspj10.library.inventory.AInventory;
 import me.thomaspj10.library.inventory.AItem;
-import me.thomaspj10.library.inventory.events.AInventoryClickEvent;
 
 public class InventoryEventListener implements Listener {
 

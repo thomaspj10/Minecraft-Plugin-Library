@@ -9,8 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 import me.thomaspj10.library.Main;
-import me.thomaspj10.library.events.IEventListener;
-import me.thomaspj10.library.inventory.events.AInventoryEvent;
+import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.event.events.ainventory.AInventoryEvent;
 
 public class AInventory implements IEventListener<AInventoryEvent> {
 

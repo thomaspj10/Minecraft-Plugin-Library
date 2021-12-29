@@ -1,4 +1,4 @@
-package me.thomaspj10.library.inventory.events;
+package me.thomaspj10.library.event.events.ainventory;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
