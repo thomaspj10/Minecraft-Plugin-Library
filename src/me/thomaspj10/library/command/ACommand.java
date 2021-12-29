@@ -1,7 +1,6 @@
 package me.thomaspj10.library.command;
 
 import java.lang.reflect.Field;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.bukkit.Bukkit;
@@ -16,10 +15,6 @@ public class ACommand implements IEventListener<ACommandExecuteEvent> {
 
 	private ACommandListener listener;
 	private String command;
-	
-	private Predicate<ACommandExecuteEvent> filter = e -> {
-		return e.getCommand() == this.command;
-	};
 	
 	public ACommand(String command, String description, String usageMessage) {
 		this.listener = new ACommandListener(command);
@@ -41,8 +36,10 @@ public class ACommand implements IEventListener<ACommandExecuteEvent> {
 	}
 	
 	@Override
-	public <T extends ACommandExecuteEvent> void on(Class<T> clazz, Consumer<T> callback) {
-		Main.eventManager.register(clazz, callback, this.filter);
+	public Predicate<ACommandExecuteEvent> getFilter() {
+		return e -> {
+			return e.getCommand() == this.command;
+		};
 	}
 	
 	class ACommandListener extends BukkitCommand {

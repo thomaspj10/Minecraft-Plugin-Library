@@ -4,8 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import me.thomaspj10.library.logger.Logger;
-import me.thomaspj10.library.logger.Logger.LogType;
+import me.thomaspj10.library.Logger.LogType;
 
 public class Builder<T, S extends JsonElement> {
 

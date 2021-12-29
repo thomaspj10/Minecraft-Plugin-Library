@@ -3,6 +3,7 @@ package me.thomaspj10.library;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.Event;
@@ -21,6 +22,13 @@ public class PluginLibrary implements IEventListener<Event> {
 	
 	public PluginLibrary(JavaPlugin plugin) {
 		this.plugin = plugin;
+	}
+	
+	@Override
+	public Predicate<Event> getFilter() {
+		return e -> {
+			return true;
+		};
 	}
 	
 	/**
@@ -73,13 +81,6 @@ public class PluginLibrary implements IEventListener<Event> {
 	 */
 	public void onCommand(String command, String description, String usage, Consumer<ACommandExecuteEvent> callback) {
 		new ACommand(command, description, usage).on(ACommandExecuteEvent.class, callback);
-	}
-
-	@Override
-	public <T extends Event> void on(Class<T> clazz, Consumer<T> callback) {
-		Main.eventManager.register(clazz, callback, e -> {
-			return true;
-		});
 	}
 	
 }

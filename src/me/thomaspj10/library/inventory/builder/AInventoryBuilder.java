@@ -4,10 +4,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.Builder;
+import me.thomaspj10.library.Logger;
+import me.thomaspj10.library.Logger.LogType;
 import me.thomaspj10.library.inventory.AInventory;
 import me.thomaspj10.library.inventory.AItem;
-import me.thomaspj10.library.logger.Logger;
-import me.thomaspj10.library.logger.Logger.LogType;
 
 public class AInventoryBuilder extends Builder<AInventory, JsonObject> {
 	

@@ -9,7 +9,6 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.thomaspj10.library.Main;
 import me.thomaspj10.library.event.IEventListener;
 import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 
@@ -25,16 +24,14 @@ public class AItem implements IEventListener<AInventoryClickEvent> {
 		this.item = new ItemStack(material);
 	}
 	
-	private Predicate<AInventoryClickEvent> filter = e -> {
-		// Note: This is not perfect, the same item will still trigger.
-		if (e.getItem() == null) return false;
-		
-		return this.item.equals(e.getItem().getItemStack());
-	};
-
 	@Override
-	public <T extends AInventoryClickEvent> void on(Class<T> clazz, Consumer<T> callback) {
-		Main.eventManager.register(clazz, callback, this.filter);
+	public Predicate<AInventoryClickEvent> getFilter() {
+		return e -> {
+			// Note: This is not perfect, the same item will still trigger.
+			if (e.getItem() == null) return false;
+			
+			return this.item.equals(e.getItem().getItemStack());
+		};
 	}
 	
 	public ItemStack getItemStack() {

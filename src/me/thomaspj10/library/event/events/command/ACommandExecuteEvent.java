@@ -1,4 +1,4 @@
-package me.thomaspj10.library.command;
+package me.thomaspj10.library.event.events.command;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Event;

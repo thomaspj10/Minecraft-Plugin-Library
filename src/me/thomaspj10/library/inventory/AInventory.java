@@ -1,14 +1,12 @@
 package me.thomaspj10.library.inventory;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import me.thomaspj10.library.Main;
 import me.thomaspj10.library.event.IEventListener;
 import me.thomaspj10.library.event.events.ainventory.AInventoryEvent;
 
@@ -18,14 +16,17 @@ public class AInventory implements IEventListener<AInventoryEvent> {
 	
 	private Inventory inventory;
 	
-	private Predicate<AInventoryEvent> filter = e -> {
-		return e.getInventory() == this;
-	};
-	
 	public AInventory(String name, int size) {
 		this.inventory = Bukkit.createInventory(null, size, name);
 		
 		inventories.add(this);
+	}
+	
+	@Override
+	public Predicate<AInventoryEvent> getFilter() {
+		return e -> {
+			return e.getInventory() == this;
+		};
 	}
 	
 	public static AInventory match(Inventory inventory) {
@@ -35,11 +36,6 @@ public class AInventory implements IEventListener<AInventoryEvent> {
 		}
 		
 		return null;
-	}
-	
-	@Override
-	public <T extends AInventoryEvent> void on(Class<T> clazz, Consumer<T> callback) {
-		Main.eventManager.register(clazz, callback, this.filter);
 	}
 	
 	public int getSize() {
