@@ -1,25 +1,20 @@
 package me.thomaspj10.library.inventory;
 
-import java.util.ArrayList;
 import java.util.function.Predicate;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.event.entity.AEntity;
 import me.thomaspj10.library.event.events.ainventory.AInventoryEvent;
 
-public class AInventory implements IEventListener<AInventoryEvent> {
-
-	private static ArrayList<AInventory> inventories = new ArrayList<>();
+public class AInventory extends AEntity<AInventoryEvent> {
 	
 	private Inventory inventory;
 	
 	public AInventory(String name, int size) {
 		this.inventory = Bukkit.createInventory(null, size, name);
-		
-		inventories.add(this);
 	}
 	
 	@Override
@@ -29,13 +24,9 @@ public class AInventory implements IEventListener<AInventoryEvent> {
 		};
 	}
 	
-	public static AInventory match(Inventory inventory) {
-		for (AInventory AInventory : inventories) {
-			if (AInventory.inventory == inventory)
-				return AInventory;
-		}
-		
-		return null;
+	@Override
+	protected boolean matchesIdentifier(Object identifier) {
+		return this.inventory == identifier;
 	}
 	
 	public int getSize() {

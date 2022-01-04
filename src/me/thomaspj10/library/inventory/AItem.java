@@ -9,10 +9,10 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.event.entity.AEntity;
 import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 
-public class AItem implements IEventListener<AInventoryClickEvent> {
+public class AItem extends AEntity<AInventoryClickEvent> {
 	
 	private ItemStack item;
 	
@@ -32,6 +32,13 @@ public class AItem implements IEventListener<AInventoryClickEvent> {
 			
 			return this.item.equals(e.getItem().getItemStack());
 		};
+	}
+	
+	@Override
+	protected boolean matchesIdentifier(Object identifier) {
+		if (identifier instanceof ItemStack)
+			return this.item.isSimilar((ItemStack) identifier);
+		return false;
 	}
 	
 	public ItemStack getItemStack() {

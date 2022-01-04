@@ -1,24 +1,22 @@
 package me.thomaspj10.library;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
+import org.bukkit.Material;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.event.EventManager;
+import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 import me.thomaspj10.library.event.listeners.BlockEventListener;
 import me.thomaspj10.library.event.listeners.EntityEventListener;
 import me.thomaspj10.library.event.listeners.InventoryEventListener;
 import me.thomaspj10.library.event.listeners.PlayerEventListener;
-import me.thomaspj10.library.executor.CommandExecutor;
+import me.thomaspj10.library.inventory.AInventory;
+import me.thomaspj10.library.inventory.AItem;
 
 public class Main extends JavaPlugin {
 
@@ -32,6 +30,7 @@ public class Main extends JavaPlugin {
 		library = new PluginLibrary(null);
 		gson = new GsonBuilder().create();
 		
+		/*
 		StringBuilder result = new StringBuilder();
 		URL url = new URL("http://localhost/plugin-library-web/examples/event.json");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -54,6 +53,7 @@ public class Main extends JavaPlugin {
 		eventManager.execute(PlayerMoveEvent.class, pme);
 		
 		System.out.println(pme.isCancelled());
+		*/
 	}
 	
 	@Override
@@ -68,6 +68,16 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new BlockEventListener(eventManager), this);
 		getServer().getPluginManager().registerEvents(new InventoryEventListener(eventManager), this);
 		getServer().getPluginManager().registerEvents(new EntityEventListener(eventManager), this);
+		
+		library.on(PlayerMoveEvent.class, e -> {
+			AInventory inventory = new AInventory("This is a cool name!", 18);
+			inventory.setItem(2, new AItem(Material.STONE));
+			inventory.openInventory(e.getPlayer());
+			
+			inventory.on(AInventoryClickEvent.class, ev -> {
+				ev.getPlayer().sendMessage("Hello player!");
+			});
+		});
 	}
 	
 	@Override
