@@ -4,13 +4,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.Builder;
+import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.executor.instruction.InstructionChain;
 import me.thomaspj10.library.executor.parameter.ConstantParameter;
 import me.thomaspj10.library.executor.parameter.IParameter;
 import me.thomaspj10.library.executor.parameter.InstructionChainParameter;
 
-public class ParameterBuilder extends Builder<IParameter, JsonObject> {
+public class ParameterBuilder extends ClassBuilder<IParameter, JsonObject> {
 	
 	public ParameterBuilder() {
 		this.setRequiredKeys(new String[] {

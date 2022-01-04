@@ -41,7 +41,11 @@ public class Logger {
 		// The message should not be printed because the level is too low.
 		if (type.getLevel() < minimum.getLevel()) return;
 		
-		Bukkit.getServer().getConsoleSender().sendMessage(type.getColor() + "[" + type.getName() + "] " + message);
+		if (Bukkit.getServer() != null)
+			Bukkit.getServer().getConsoleSender().sendMessage(type.getColor() + "[" + type.getName() + "] " + message);
+		else
+			System.out.println("[" + type.getName() + "] " + message);
+			
 	}
 	
 }

@@ -7,6 +7,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import me.thomaspj10.library.Main;
 import me.thomaspj10.library.event.IEventListener;
 import me.thomaspj10.library.executor.builder.InstructionChainBuilder;
 import me.thomaspj10.library.executor.instruction.InstructionChain;
@@ -18,9 +19,12 @@ public class CommandExecutor {
 	private VariableManager variableManager = new VariableManager();
 	
 	private String event;
+	private String entity;
 	
 	public CommandExecutor(JsonObject json) {
 		this.event = json.get("event").getAsString();
+		this.entity = json.get("entity").getAsString();
+		
 		JsonArray commands = json.get("commands").getAsJsonArray();
 		
 		for (JsonElement command : commands) {
@@ -29,18 +33,25 @@ public class CommandExecutor {
 			InstructionChain chain = new InstructionChainBuilder().json(commandObject).build();
 			this.instructions.add(chain);
 		}
+		
+		this.registerToEntity();
 	}
 	
-	public VariableManager getVariableManager() {
-		return this.variableManager;
+	private void registerToEntity() {
+		if (this.entity.equals("pluginlibrary")) {
+			this.register(Main.library);
+		} else {
+			// Register the event to a specific entity.
+		}
 	}
 	
-	public <T> void register(IEventListener<T> listener) {
+	private <T> void register(IEventListener<T> listener) {
 		try {
 			@SuppressWarnings("unchecked")
 			Class<T> clz = (Class<T>) Class.forName(this.event);
 			
 			listener.<T>on(clz, object -> {
+				this.variableManager.reset();
 				this.variableManager.set("event", object);
 				
 				for (InstructionChain chain : this.instructions) {

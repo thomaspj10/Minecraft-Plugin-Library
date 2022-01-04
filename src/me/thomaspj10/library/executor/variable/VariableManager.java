@@ -11,6 +11,10 @@ public class VariableManager {
 		
 	}
 	
+	public void reset() {
+		this.variables.clear();
+	}
+	
 	public void set(String name, Object value) {
 		Variable variable = this.get(name);
 		if (variable != null) {

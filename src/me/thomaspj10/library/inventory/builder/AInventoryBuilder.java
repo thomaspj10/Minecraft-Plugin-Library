@@ -3,13 +3,13 @@ package me.thomaspj10.library.inventory.builder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.Builder;
+import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.Logger;
 import me.thomaspj10.library.Logger.LogType;
 import me.thomaspj10.library.inventory.AInventory;
 import me.thomaspj10.library.inventory.AItem;
 
-public class AInventoryBuilder extends Builder<AInventory, JsonObject> {
+public class AInventoryBuilder extends ClassBuilder<AInventory, JsonObject> {
 	
 	public AInventory build() {
 		AInventory inventory = new AInventory(this.getJson().get("name").getAsString(), this.getJson().get("size").getAsInt());

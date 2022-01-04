@@ -6,7 +6,7 @@ import com.google.gson.JsonParser;
 
 import me.thomaspj10.library.Logger.LogType;
 
-public class Builder<T, S extends JsonElement> {
+public class ClassBuilder<T, S extends JsonElement> {
 
 	private S json;
 	
@@ -33,14 +33,14 @@ public class Builder<T, S extends JsonElement> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public final Builder<T, JsonObject> json(String jsonData) {
+	public final ClassBuilder<T, JsonObject> json(String jsonData) {
 		this.json = (S) new JsonParser().parse(jsonData).getAsJsonObject();
 		if (!this.isValidJson()) Logger.log(LogType.WARN, "The json is missing a required key.");
 		
-		return (Builder<T, JsonObject>) this;
+		return (ClassBuilder<T, JsonObject>) this;
 	}
 	
-	public final Builder<T, S> json(S json) {
+	public final ClassBuilder<T, S> json(S json) {
 		this.json = json;
 		if (!this.isValidJson()) Logger.log(LogType.WARN, "The json is missing a required key.");
 		

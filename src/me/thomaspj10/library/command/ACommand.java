@@ -10,6 +10,7 @@ import org.bukkit.command.defaults.BukkitCommand;
 
 import me.thomaspj10.library.Main;
 import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.event.events.command.ACommandExecuteEvent;
 
 public class ACommand implements IEventListener<ACommandExecuteEvent> {
 
