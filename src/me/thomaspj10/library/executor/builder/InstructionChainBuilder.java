@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.executor.instruction.InstructionChain;
 
-public class InstructionChainBuilder extends ClassBuilder<InstructionChain, JsonObject> {
+public class InstructionChainBuilder extends ClassBuilder<InstructionChain> {
 
 	public InstructionChain build() {
 		InstructionChain chain = new InstructionChain(this.getJson().get("base").getAsString());

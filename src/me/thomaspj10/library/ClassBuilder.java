@@ -1,18 +1,17 @@
 package me.thomaspj10.library;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import me.thomaspj10.library.Logger.LogType;
 
-public class ClassBuilder<T, S extends JsonElement> {
+public class ClassBuilder<T> {
 
-	private S json;
+	private JsonObject json;
 	
 	private String[] requiredKeys = new String[] {};
 	
-	protected final S getJson() {
+	protected final JsonObject getJson() {
 		return this.json;
 	}
 	
@@ -21,26 +20,23 @@ public class ClassBuilder<T, S extends JsonElement> {
 	}
 	
 	private boolean isValidJson() {
-		if (this.json instanceof JsonObject) {
-			JsonObject json = (JsonObject) this.json;
-			
-			for (String key : this.requiredKeys) {
-				if (!json.has(key)) return false;
-			}
-		}
+		JsonObject json = (JsonObject) this.json;
 		
+		for (String key : this.requiredKeys) {
+			if (!json.has(key)) return false;
+		}
+	
 		return true;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public final ClassBuilder<T, JsonObject> json(String jsonData) {
-		this.json = (S) new JsonParser().parse(jsonData).getAsJsonObject();
+	public final ClassBuilder<T> json(String jsonData) {
+		this.json = new JsonParser().parse(jsonData).getAsJsonObject();
 		if (!this.isValidJson()) Logger.log(LogType.WARN, "The json is missing a required key.");
 		
-		return (ClassBuilder<T, JsonObject>) this;
+		return (ClassBuilder<T>) this;
 	}
 	
-	public final ClassBuilder<T, S> json(S json) {
+	public final ClassBuilder<T> json(JsonObject json) {
 		this.json = json;
 		if (!this.isValidJson()) Logger.log(LogType.WARN, "The json is missing a required key.");
 		

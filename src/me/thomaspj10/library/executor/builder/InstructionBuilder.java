@@ -7,7 +7,7 @@ import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.executor.instruction.Instruction;
 import me.thomaspj10.library.executor.parameter.IParameter;
 
-public class InstructionBuilder extends ClassBuilder<Instruction, JsonObject> {
+public class InstructionBuilder extends ClassBuilder<Instruction> {
 
 	public InstructionBuilder() {
 		this.setRequiredKeys(new String[] {

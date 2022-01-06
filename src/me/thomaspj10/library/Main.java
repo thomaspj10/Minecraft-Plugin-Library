@@ -2,21 +2,20 @@ package me.thomaspj10.library;
 
 import java.io.IOException;
 
-import org.bukkit.Material;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.event.EventManager;
-import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 import me.thomaspj10.library.event.listeners.BlockEventListener;
 import me.thomaspj10.library.event.listeners.EntityEventListener;
 import me.thomaspj10.library.event.listeners.InventoryEventListener;
 import me.thomaspj10.library.event.listeners.PlayerEventListener;
 import me.thomaspj10.library.inventory.AInventory;
-import me.thomaspj10.library.inventory.AItem;
+import me.thomaspj10.library.script.Script;
 
 public class Main extends JavaPlugin {
 
@@ -43,16 +42,12 @@ public class Main extends JavaPlugin {
 		
 		JsonObject json = gson.fromJson(result.toString(), JsonObject.class);
 		CommandExecutor executor = new CommandExecutor(json);
+		System.out.println(executor.getEntity());
 		
 		TestPlayer testPlayer = new TestPlayer();
-		
 		PlayerMoveEvent pme = new PlayerMoveEvent(testPlayer, null, null);
 		
-		System.out.println(pme.isCancelled());
-		
 		eventManager.execute(PlayerMoveEvent.class, pme);
-		
-		System.out.println(pme.isCancelled());
 		*/
 	}
 	
@@ -70,13 +65,13 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EntityEventListener(eventManager), this);
 		
 		library.on(PlayerMoveEvent.class, e -> {
-			AInventory inventory = new AInventory("This is a cool name!", 18);
-			inventory.setItem(2, new AItem(Material.STONE));
-			inventory.openInventory(e.getPlayer());
+			String s = "{ \"name\": \"The name of my script..\", \"listeners\": [ { \"entity\": 1, \"event\": \"me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent\", \"commands\": [ { \"base\": \"event\", \"instructions\": [ { \"action\": \"setCancelled\", \"parameters\": [ { \"type\": \"constant\", \"className\": \"boolean\", \"value\": true } ] } ] } ] } ], \"entities\": [ { \"id\": 1, \"target\": \"me.thomaspj10.library.inventory.builder.AInventoryBuilder\", \"result\": \"me.thomaspj10.library.inventory.AInventory\", \"data\": { \"name\": \"Name of the inventory!\", \"size\": 18, \"items\": [ { \"slot\": 0, \"item\": { \"material\": \"STONE\", \"amount\": 64 } }, { \"slot\": 1, \"item\": { \"material\": \"GRASS\", \"amount\": 1 } } ] } } ] }";
 			
-			inventory.on(AInventoryClickEvent.class, ev -> {
-				ev.getPlayer().sendMessage("Hello player!");
-			});
+			JsonObject json = gson.fromJson(s, JsonObject.class);
+			Script script = new Script(json);
+			
+			AInventory inventory = (AInventory) script.getUniqueAEntityById(1);
+			inventory.openInventory(e.getPlayer());
 		});
 	}
 	

@@ -2,12 +2,10 @@ package me.thomaspj10.library.inventory.builder;
 
 import org.bukkit.Material;
 
-import com.google.gson.JsonObject;
-
 import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.inventory.AItem;
 
-public class AItemBuilder extends ClassBuilder<AItem, JsonObject> {
+public class AItemBuilder extends ClassBuilder<AItem> {
 	
 	public AItemBuilder() {
 		this.setRequiredKeys(new String[] {

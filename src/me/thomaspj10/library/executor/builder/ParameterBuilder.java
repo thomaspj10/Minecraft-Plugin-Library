@@ -10,7 +10,7 @@ import me.thomaspj10.library.executor.parameter.ConstantParameter;
 import me.thomaspj10.library.executor.parameter.IParameter;
 import me.thomaspj10.library.executor.parameter.InstructionChainParameter;
 
-public class ParameterBuilder extends ClassBuilder<IParameter, JsonObject> {
+public class ParameterBuilder extends ClassBuilder<IParameter> {
 	
 	public ParameterBuilder() {
 		this.setRequiredKeys(new String[] {
