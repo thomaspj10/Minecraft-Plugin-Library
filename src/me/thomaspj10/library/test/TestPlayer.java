@@ -1,4 +1,4 @@
-package me.thomaspj10.library;
+package me.thomaspj10.library.test;
 
 import java.net.InetSocketAddress;
 import java.util.Collection;

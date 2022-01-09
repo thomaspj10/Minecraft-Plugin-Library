@@ -3,7 +3,7 @@ package me.thomaspj10.library.executor.builder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.ClassBuilder;
+import me.thomaspj10.library.builder.ClassBuilder;
 import me.thomaspj10.library.executor.instruction.Instruction;
 import me.thomaspj10.library.executor.parameter.IParameter;
 

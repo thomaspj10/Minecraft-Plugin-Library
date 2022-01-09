@@ -1,4 +1,4 @@
-package me.thomaspj10.library;
+package me.thomaspj10.library.builder;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

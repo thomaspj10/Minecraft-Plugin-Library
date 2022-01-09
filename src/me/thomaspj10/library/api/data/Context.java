@@ -1,4 +1,4 @@
-package me.thomaspj10.library.data;
+package me.thomaspj10.library.api.data;
 
 import java.io.File;
 

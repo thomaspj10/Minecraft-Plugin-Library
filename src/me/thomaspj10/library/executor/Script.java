@@ -1,13 +1,12 @@
-package me.thomaspj10.library.script;
+package me.thomaspj10.library.executor;
 
 import java.util.ArrayList;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.event.entity.AEntity;
-import me.thomaspj10.library.event.entity.ConstructableAEntity;
-import me.thomaspj10.library.executor.CommandExecutor;
+import me.thomaspj10.library.entity.AEntity;
+import me.thomaspj10.library.entity.ConstructableAEntity;
 
 public class Script {
 	

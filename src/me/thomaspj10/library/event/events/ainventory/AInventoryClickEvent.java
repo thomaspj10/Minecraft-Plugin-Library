@@ -3,8 +3,8 @@ package me.thomaspj10.library.event.events.ainventory;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 
-import me.thomaspj10.library.inventory.AInventory;
-import me.thomaspj10.library.inventory.AItem;
+import me.thomaspj10.library.api.inventory.AInventory;
+import me.thomaspj10.library.api.inventory.AItem;
 
 public class AInventoryClickEvent extends AInventoryEvent {
 

@@ -1,4 +1,4 @@
-package me.thomaspj10.library.command;
+package me.thomaspj10.library.api.command;
 
 import java.lang.reflect.Field;
 import java.util.function.Predicate;

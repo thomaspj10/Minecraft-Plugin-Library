@@ -5,7 +5,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 
-import me.thomaspj10.library.inventory.AInventory;
+import me.thomaspj10.library.api.inventory.AInventory;
 
 public class AInventoryEvent extends Event {
 

@@ -1,4 +1,4 @@
-package me.thomaspj10.library.player;
+package me.thomaspj10.library.api.player;
 
 import java.util.function.Predicate;
 

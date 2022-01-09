@@ -9,13 +9,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
+import me.thomaspj10.library.api.PluginLibrary;
+import me.thomaspj10.library.api.inventory.AInventory;
 import me.thomaspj10.library.event.EventManager;
 import me.thomaspj10.library.event.listeners.BlockEventListener;
 import me.thomaspj10.library.event.listeners.EntityEventListener;
 import me.thomaspj10.library.event.listeners.InventoryEventListener;
 import me.thomaspj10.library.event.listeners.PlayerEventListener;
-import me.thomaspj10.library.inventory.AInventory;
-import me.thomaspj10.library.script.Script;
+import me.thomaspj10.library.executor.Script;
 
 public class Main extends JavaPlugin {
 

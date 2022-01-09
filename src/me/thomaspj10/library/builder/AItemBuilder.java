@@ -1,9 +1,8 @@
-package me.thomaspj10.library.inventory.builder;
+package me.thomaspj10.library.builder;
 
 import org.bukkit.Material;
 
-import me.thomaspj10.library.ClassBuilder;
-import me.thomaspj10.library.inventory.AItem;
+import me.thomaspj10.library.api.inventory.AItem;
 
 public class AItemBuilder extends ClassBuilder<AItem> {
 	

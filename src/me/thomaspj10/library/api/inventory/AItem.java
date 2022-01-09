@@ -1,4 +1,4 @@
-package me.thomaspj10.library.inventory;
+package me.thomaspj10.library.api.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.thomaspj10.library.event.entity.AEntity;
+import me.thomaspj10.library.entity.AEntity;
 import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
 
 public class AItem extends AEntity<AInventoryClickEvent> {

@@ -1,4 +1,4 @@
-package me.thomaspj10.library;
+package me.thomaspj10.library.api;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.Event;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.thomaspj10.library.command.ACommand;
-import me.thomaspj10.library.data.Context;
+import me.thomaspj10.library.api.command.ACommand;
+import me.thomaspj10.library.api.data.Context;
 import me.thomaspj10.library.event.IEventListener;
 import me.thomaspj10.library.event.events.command.ACommandExecuteEvent;
 

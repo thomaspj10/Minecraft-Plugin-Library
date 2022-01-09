@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.ClassBuilder;
+import me.thomaspj10.library.builder.ClassBuilder;
 import me.thomaspj10.library.executor.instruction.InstructionChain;
 import me.thomaspj10.library.executor.parameter.ConstantParameter;
 import me.thomaspj10.library.executor.parameter.IParameter;

@@ -22,11 +22,11 @@ import org.bukkit.event.inventory.PrepareSmithingEvent;
 import org.bukkit.event.inventory.SmithItemEvent;
 import org.bukkit.event.inventory.TradeSelectEvent;
 
+import me.thomaspj10.library.api.inventory.AInventory;
+import me.thomaspj10.library.api.inventory.AItem;
+import me.thomaspj10.library.entity.AEntity;
 import me.thomaspj10.library.event.EventManager;
-import me.thomaspj10.library.event.entity.AEntity;
 import me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent;
-import me.thomaspj10.library.inventory.AInventory;
-import me.thomaspj10.library.inventory.AItem;
 
 public class InventoryEventListener implements Listener {
 

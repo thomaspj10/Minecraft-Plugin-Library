@@ -1,4 +1,4 @@
-package me.thomaspj10.library.inventory;
+package me.thomaspj10.library.api.inventory;
 
 import java.util.function.Predicate;
 
@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import me.thomaspj10.library.event.entity.AEntity;
+import me.thomaspj10.library.entity.AEntity;
 import me.thomaspj10.library.event.events.ainventory.AInventoryEvent;
 
 public class AInventory extends AEntity<AInventoryEvent> {

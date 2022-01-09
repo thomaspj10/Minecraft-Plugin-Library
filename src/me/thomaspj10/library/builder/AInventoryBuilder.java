@@ -1,13 +1,12 @@
-package me.thomaspj10.library.inventory.builder;
+package me.thomaspj10.library.builder;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import me.thomaspj10.library.ClassBuilder;
 import me.thomaspj10.library.Logger;
 import me.thomaspj10.library.Logger.LogType;
-import me.thomaspj10.library.inventory.AInventory;
-import me.thomaspj10.library.inventory.AItem;
+import me.thomaspj10.library.api.inventory.AInventory;
+import me.thomaspj10.library.api.inventory.AItem;
 
 public class AInventoryBuilder extends ClassBuilder<AInventory> {
 	
