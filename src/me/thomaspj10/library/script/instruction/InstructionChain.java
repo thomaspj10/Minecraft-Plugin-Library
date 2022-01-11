@@ -16,10 +16,19 @@ public class InstructionChain {
 		this.base = base;
 	}
 	
+	/**
+	 * Add an instruction to the chain.
+	 * @param instruction
+	 */
 	public void addInstruction(Instruction instruction) {
 		this.instructions.add(instruction);
 	}
 	
+	/**
+	 * Execute the instruction chain.
+	 * @param variableManager
+	 * @return the MultiObject at the end of the chain.
+	 */
 	public MultiObject execute(VariableManager variableManager) {
 		MultiObject previous = new MultiObject(variableManager.get(base).getValue());
 		

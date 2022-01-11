@@ -21,10 +21,20 @@ public class Instruction {
 		this.action = action;
 	}
 	
+	/**
+	 * Add a parameter to the instruction.
+	 * @param parameter
+	 */
 	public void addParameter(IParameter parameter) {
 		this.parameters.add(parameter);
 	}
 	
+	/**
+	 * Execute the instruction.
+	 * @param variableManager
+	 * @param previous
+	 * @return the MultiObject result. Returns null when the method is void.
+	 */
 	public MultiObject execute(VariableManager variableManager, MultiObject previous) {
 		try {
 			Class<?>[] parameterTypes = new Class[this.parameters.size()];

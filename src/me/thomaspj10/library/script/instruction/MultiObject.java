@@ -11,10 +11,20 @@ public class MultiObject {
 		this.objects.add(object);
 	}
 	
+	/**
+	 * Add an object to the end of the options.
+	 * @param object
+	 */
 	public void addObject(Object object) {
 		this.objects.add(object);
 	}
 	
+	/**
+	 * Get a method by name and parameterTypes. Goes through the objects in order.
+	 * @param name
+	 * @param parameterTypes
+	 * @return the MethodResult if the method exists, otherwise returns null.
+	 */
 	public MethodResult getMethod(String name, Class<?>[] parameterTypes) {
 		for (Object object : this.objects) {
 			try {
@@ -39,10 +49,18 @@ public class MultiObject {
 			this.method = method;
 		}
 		
+		/**
+		 * 
+		 * @return the object.
+		 */
 		public Object getObject() {
 			return this.object;
 		}
 		
+		/**
+		 * 
+		 * @return the method.
+		 */
 		public Method getMethod() {
 			return this.method;
 		}

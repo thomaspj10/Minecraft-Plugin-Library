@@ -18,6 +18,7 @@ public class ConstantParameter implements IParameter {
 		this.value = value;
 	}
 
+	@Override
 	public Object getValue(VariableManager variableManager) {
 		return this.value;
 	}

@@ -34,14 +34,27 @@ public class CommandExecutor {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return The entity id corresponding to this event.
+	 */
 	public int getEntityId() {
 		return this.entityId;
 	}
 	
+	/**
+	 * 
+	 * @return The event classname corresponding to this event.
+	 */
 	public String getEvent() {
 		return this.event;
 	}
 	
+	/**
+	 * Register an event listener.
+	 * @param <T> event superclass
+	 * @param listener
+	 */
 	public <T> void register(IEventListener<T> listener) {
 		try {
 			@SuppressWarnings("unchecked")

@@ -45,10 +45,19 @@ public class Script {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return The script name.
+	 */
 	public String getName() {
 		return this.name;
 	}
 	
+	/**
+	 * Generates a new unique entity by the id.
+	 * @param id
+	 * @return an AEntity.
+	 */
 	public AEntity<?> getUniqueAEntityById(int id) {
 		for (ConstructableAEntity constructableAEntity : this.entities) {
 			if (constructableAEntity.getId() == id)
