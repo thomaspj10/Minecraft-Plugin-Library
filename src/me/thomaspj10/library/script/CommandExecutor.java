@@ -1,4 +1,4 @@
-package me.thomaspj10.library.executor;
+package me.thomaspj10.library.script;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.event.IEventListener;
-import me.thomaspj10.library.executor.builder.InstructionChainBuilder;
-import me.thomaspj10.library.executor.instruction.InstructionChain;
-import me.thomaspj10.library.executor.variable.VariableManager;
+import me.thomaspj10.library.script.builder.InstructionChainBuilder;
+import me.thomaspj10.library.script.instruction.InstructionChain;
+import me.thomaspj10.library.script.variable.VariableManager;
 
 public class CommandExecutor {
 	

@@ -1,4 +1,4 @@
-package me.thomaspj10.library.executor.variable;
+package me.thomaspj10.library.script.variable;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,6 +3,7 @@ package me.thomaspj10.library.builder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import me.thomaspj10.library.Logger;
 import me.thomaspj10.library.Logger.LogType;
 
 public class ClassBuilder<T> {

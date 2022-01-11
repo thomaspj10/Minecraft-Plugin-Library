@@ -1,4 +1,4 @@
-package me.thomaspj10.library.executor;
+package me.thomaspj10.library.script;
 
 import java.util.ArrayList;
 

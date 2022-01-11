@@ -1,11 +1,11 @@
-package me.thomaspj10.library.executor.builder;
+package me.thomaspj10.library.script.builder;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.builder.ClassBuilder;
-import me.thomaspj10.library.executor.instruction.Instruction;
-import me.thomaspj10.library.executor.parameter.IParameter;
+import me.thomaspj10.library.script.instruction.Instruction;
+import me.thomaspj10.library.script.parameter.IParameter;
 
 public class InstructionBuilder extends ClassBuilder<Instruction> {
 

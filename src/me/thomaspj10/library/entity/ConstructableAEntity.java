@@ -9,7 +9,7 @@ import com.google.gson.JsonObject;
 import me.thomaspj10.library.Logger;
 import me.thomaspj10.library.Logger.LogType;
 import me.thomaspj10.library.builder.ClassBuilder;
-import me.thomaspj10.library.executor.CommandExecutor;
+import me.thomaspj10.library.script.CommandExecutor;
 
 public class ConstructableAEntity {
 

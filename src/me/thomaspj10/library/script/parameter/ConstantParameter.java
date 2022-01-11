@@ -1,8 +1,8 @@
-package me.thomaspj10.library.executor.parameter;
+package me.thomaspj10.library.script.parameter;
 
 import org.apache.commons.lang.ClassUtils;
 
-import me.thomaspj10.library.executor.variable.VariableManager;
+import me.thomaspj10.library.script.variable.VariableManager;
 
 public class ConstantParameter implements IParameter {
 

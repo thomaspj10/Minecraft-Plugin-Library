@@ -1,6 +1,6 @@
-package me.thomaspj10.library.executor.parameter;
+package me.thomaspj10.library.script.parameter;
 
-import me.thomaspj10.library.executor.variable.VariableManager;
+import me.thomaspj10.library.script.variable.VariableManager;
 
 public interface IParameter {
 

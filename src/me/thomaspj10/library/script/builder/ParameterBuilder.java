@@ -1,14 +1,14 @@
-package me.thomaspj10.library.executor.builder;
+package me.thomaspj10.library.script.builder;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import me.thomaspj10.library.builder.ClassBuilder;
-import me.thomaspj10.library.executor.instruction.InstructionChain;
-import me.thomaspj10.library.executor.parameter.ConstantParameter;
-import me.thomaspj10.library.executor.parameter.IParameter;
-import me.thomaspj10.library.executor.parameter.InstructionChainParameter;
+import me.thomaspj10.library.script.instruction.InstructionChain;
+import me.thomaspj10.library.script.parameter.ConstantParameter;
+import me.thomaspj10.library.script.parameter.IParameter;
+import me.thomaspj10.library.script.parameter.InstructionChainParameter;
 
 public class ParameterBuilder extends ClassBuilder<IParameter> {
 	

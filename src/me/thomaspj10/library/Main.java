@@ -16,7 +16,7 @@ import me.thomaspj10.library.event.listeners.BlockEventListener;
 import me.thomaspj10.library.event.listeners.EntityEventListener;
 import me.thomaspj10.library.event.listeners.InventoryEventListener;
 import me.thomaspj10.library.event.listeners.PlayerEventListener;
-import me.thomaspj10.library.executor.Script;
+import me.thomaspj10.library.script.Script;
 
 public class Main extends JavaPlugin {
 
@@ -66,8 +66,8 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new EntityEventListener(eventManager), this);
 		
 		library.on(PlayerMoveEvent.class, e -> {
-			String s = "{ \"name\": \"The name of my script..\", \"listeners\": [ { \"entity\": 1, \"event\": \"me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent\", \"commands\": [ { \"base\": \"event\", \"instructions\": [ { \"action\": \"setCancelled\", \"parameters\": [ { \"type\": \"constant\", \"className\": \"boolean\", \"value\": true } ] } ] } ] } ], \"entities\": [ { \"id\": 1, \"target\": \"me.thomaspj10.library.inventory.builder.AInventoryBuilder\", \"result\": \"me.thomaspj10.library.inventory.AInventory\", \"data\": { \"name\": \"Name of the inventory!\", \"size\": 18, \"items\": [ { \"slot\": 0, \"item\": { \"material\": \"STONE\", \"amount\": 64 } }, { \"slot\": 1, \"item\": { \"material\": \"GRASS\", \"amount\": 1 } } ] } } ] }";
-			
+			String s = "{ \"name\": \"The name of my script..\", \"listeners\": [ { \"entity\": 1, \"event\": \"me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent\", \"commands\": [ { \"base\": \"event\", \"instructions\": [ { \"action\": \"setCancelled\", \"parameters\": [ { \"type\": \"constant\", \"className\": \"boolean\", \"value\": true } ] } ] } ] } ], \"entities\": [ { \"id\": 1, \"target\": \"me.thomaspj10.library.builder.AInventoryBuilder\", \"result\": \"me.thomaspj10.library.api.inventory.AInventory\", \"data\": { \"name\": \"Name of the inventory!\", \"size\": 18, \"items\": [ { \"slot\": 0, \"item\": { \"material\": \"STONE\", \"amount\": 64 } }, { \"slot\": 1, \"item\": { \"material\": \"GRASS\", \"amount\": 1 } } ] } } ] }";
+					
 			JsonObject json = gson.fromJson(s, JsonObject.class);
 			Script script = new Script(json);
 			
