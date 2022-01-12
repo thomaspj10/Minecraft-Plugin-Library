@@ -63,7 +63,7 @@ public class InventoryEventListener implements Listener {
 	
 	@EventHandler
 	public void on(InventoryClickEvent event) {
-		AInventory inventory = (AInventory) AEntity.getEntityByIdentifier(event.getClickedInventory(), AInventory.class);
+		AInventory inventory = AEntity.getEntityByIdentifier(event.getClickedInventory(), AInventory.class);
 		
 		if (inventory != null) {			
 			AItem item = (AItem) AEntity.getEntityByIdentifier(event.getCurrentItem(), AItem.class);

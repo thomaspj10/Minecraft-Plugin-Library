@@ -14,13 +14,15 @@ public abstract class AEntity<EventType> implements IEventListener<EventType>, I
 	 * @param type
 	 * @return the AEntity which matches the identifier. Returns null if none exist.
 	 */
-	public static AEntity<?> getEntityByIdentifier(Object identifier, Class<?> type) {
+	@SuppressWarnings("unchecked")
+	public static <T extends AEntity<?>> T getEntityByIdentifier(Object identifier, Class<T> type) {
 		if (identifier == null)
 			return null;
 		
 		for (AEntity<?> entity : entities) {
 			if (entity.matchesIdentifier(identifier))
-				return entity;
+				// Note: This is NOT a safe cast.
+				return (T) entity;
 		}
 		
 		return null;
