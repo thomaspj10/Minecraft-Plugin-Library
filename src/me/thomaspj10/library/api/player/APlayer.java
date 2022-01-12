@@ -5,10 +5,10 @@ import java.util.function.Predicate;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerEvent;
 
-import me.thomaspj10.library.event.IEventListener;
+import me.thomaspj10.library.entity.AEntity;
 import me.thomaspj10.library.script.adapter.IAdaptable;
 
-public class APlayer implements IEventListener<PlayerEvent>, IAdaptable<Player> {
+public class APlayer extends AEntity<PlayerEvent> implements IAdaptable<Player> {
 	
 	private Player player;
 	
@@ -30,6 +30,11 @@ public class APlayer implements IEventListener<PlayerEvent>, IAdaptable<Player> 
 	@Override
 	public Player getBase() {
 		return this.player;
+	}
+
+	@Override
+	protected boolean matchesIdentifier(Object identifier) {
+		return this.player.getUniqueId() == identifier;
 	}
 	
 }

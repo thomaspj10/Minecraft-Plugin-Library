@@ -25,14 +25,26 @@ public class ConstructableAEntity {
 		this.data = data;
 	}
 	
+	/**
+	 * Attach an CommandExecutor to all newly created instances of this ConstructableAEntity.
+	 * @param executor
+	 */
 	public void addListener(CommandExecutor executor) {
 		this.listeners.add(executor);
 	}
 	
+	/**
+	 * 
+	 * @return the unique id of this ConstructableAEntity.
+	 */
 	public int getId() {
 		return this.id;
 	}
 	
+	/**
+	 * Construct a new instance of the AEntity.
+	 * @return a new AEntity.
+	 */
 	public AEntity<?> construct() {
 		try {
 			Class<?> builderCls = Class.forName(this.target);
