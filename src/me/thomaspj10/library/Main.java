@@ -2,6 +2,7 @@ package me.thomaspj10.library;
 
 import java.io.IOException;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -77,9 +78,12 @@ public class Main extends JavaPlugin {
 			AEntity.getEntityByIdentifier(e.getPlayer().getUniqueId(), APlayer.class).dispose();
 		});
 		
+		for (Player player : this.getServer().getOnlinePlayers())
+			new APlayer(player);
+		
 		library.on(PlayerMoveEvent.class, e -> {
 			String s = "{ \"name\": \"The name of my script..\", \"listeners\": [ { \"entity\": 1, \"event\": \"me.thomaspj10.library.event.events.ainventory.AInventoryClickEvent\", \"commands\": [ { \"base\": \"event\", \"instructions\": [ { \"action\": \"setCancelled\", \"parameters\": [ { \"type\": \"constant\", \"className\": \"boolean\", \"value\": true } ] } ] } ] } ], \"entities\": [ { \"id\": 1, \"target\": \"me.thomaspj10.library.builder.AInventoryBuilder\", \"result\": \"me.thomaspj10.library.api.inventory.AInventory\", \"data\": { \"name\": \"Name of the inventory!\", \"size\": 18, \"items\": [ { \"slot\": 0, \"item\": { \"material\": \"STONE\", \"amount\": 64 } }, { \"slot\": 1, \"item\": { \"material\": \"GRASS\", \"amount\": 1 } } ] } } ] }";
-					
+			
 			JsonObject json = gson.fromJson(s, JsonObject.class);
 			Script script = new Script(json);
 			
@@ -90,7 +94,8 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onDisable() {
-		
+		for (Player player : this.getServer().getOnlinePlayers())
+			AEntity.getEntityByIdentifier(player.getUniqueId(), APlayer.class).dispose();
 	}
 	
 }
